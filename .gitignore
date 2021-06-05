@@ -1,8 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-angularCourse/.firebase
-angularCourse/dist
-angularCourse/e2e
-angularCourse/src/app/CONFIG
+/angularCourse/.firebase
+/angularCourse/dist
+/angularCourse/e2e
+/angularCourse/src/app/CONFIG
 
 # compiled output
 /dist
