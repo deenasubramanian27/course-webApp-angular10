@@ -1,0 +1,10 @@
+.full-width-table {
+  width: 100%;
+}
+
+.mat-h1{
+  padding-top: 5px;
+  padding-left: 10px;
+  font-weight: 700;
+  color: gray;
+}

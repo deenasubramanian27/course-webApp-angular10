@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="background:rgba(4, 61, 114, 0.9);color: white;">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/usersList" *ngIf="!auth.isLoggedIn()">Home</a>
+      <!-- <a mat-list-item href="#" *ngIf="!auth.isLoggedIn()">Registration Form</a> -->
+      <a mat-list-item routerLink="/login" *ngIf="!auth.isLoggedIn()">Sign In / Sign Up</a>
+
+      <a mat-list-item routerLink="/enrolledCourse" *ngIf="auth.isLoggedIn()">Your Course</a>
+      <a mat-list-item routerLink="/profile" *ngIf="auth.isLoggedIn()">Profile</a>
+      <a mat-list-item routerLink="/course" *ngIf="auth.isLoggedIn()">Courses</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="app-toolbar" style="background:rgba(4, 61, 114, 0.9);position: inherit;">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span style="flex: 1 1 auto;color: white;">Coursadda</span>
+      <span (click)="signOut()" style="color: white;" class="header_menu_top_item" *ngIf="auth.isLoggedIn()">Hello,
+        {{auth.getUser() | slice:1:auth.getUser().length-1}}</span>
+      <span routerLink="/login" style="color: white;" class="header_menu_top_item" *ngIf="!auth.isLoggedIn()"> Hello,
+        Sign in</span>
+
+
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="app-body">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <p>footer</p> -->
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

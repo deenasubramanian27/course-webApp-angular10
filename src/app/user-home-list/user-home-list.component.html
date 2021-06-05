@@ -1,0 +1,21 @@
+<div class="table_design">
+<table>
+  <caption>Registered Users</caption>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of ItemsArray">
+      <td data-label="Name">{{item.firstName+"      "+item.lastName}}</td>
+      <td data-label="City">{{item.city}}</td>
+      <td data-label="State">{{item.state}}</td>
+
+    </tr>
+  </tbody>
+</table>
+</div>

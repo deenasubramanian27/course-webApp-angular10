@@ -1,0 +1,43 @@
+<ng-template [ngIf]="profile?.length!=0" [ngIfElse]="elseBlock">
+  <div class="grid-container">
+    <h1 class="mat-h1">Available Courses</h1>
+    <mat-grid-list cols="2" rowHeight="400px">
+      <mat-grid-tile *ngFor="let card of profile" [colspan]=1 [rowspan]=1>
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              {{card.courseName}}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="details">
+              <mat-icon>person</mat-icon> Author : {{card.author}}
+            </div>
+            <div class="details">
+              <mat-icon>schedule</mat-icon> Duration : {{card.duration}} HR
+            </div>
+            <div class="details">
+              <mat-icon>paid</mat-icon> Price : {{card.price}} Rupees
+            </div>
+            <div class="details">
+              <mat-icon>language</mat-icon> Language : {{card.language}}
+            </div>
+            <div class="button_align">
+              <div class="button_design">
+                <button class="button" (click)="addToCart(card)">Add</button>
+              </div>
+              <!-- <div class="button_design">
+                <button class="button">Remove</button>
+                [ngIf]="profile!=null" [ngIfThen]="dei"
+              </div> -->
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <div class="error">Database is Down</div>
+
+</ng-template>

@@ -1,0 +1,63 @@
+<script>
+  var myApp = angular.module('myApp', []);
+
+  myApp.controller('MyCtrl', function ($scope, $http) {
+    $http.get('test.properties').then(function (response) {
+      console.log('TestString is ', response.data.apiUrl);
+      //  console.log('BooleanValue is ', response.data.BooleanValue);
+    });
+  });
+</script>
+<ng-template [ngIf]="this.finalResult != null" [ngIfElse]="elseBlock">
+  <div>
+    <table class="table_design">
+      <tr>
+        <th>First Name</th>
+        <td>{{finalResult?.firstName}} </td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td>{{finalResult?.lastName }}</td>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td>{{finalResult?.state}}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{finalResult?.city}}</td>
+      </tr>
+      <tr>
+        <th>Postal Code</th>
+        <td>{{finalResult?.postalCode}}</td>
+      </tr>
+      <tr>
+        <th>Contact</th>
+        <td>{{finalResult?.contact}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td> {{finalResult?.mail| slice:1:finalResult?.mail.length-1 }}</td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>{{finalResult?.sex }}</td>
+      </tr>
+      <tr>
+        <th>Address 1</th>
+        <td>{{finalResult?.address }}</td>
+      </tr>
+      <tr *ngIf="finalResult?.address2!=null">
+        <th>Address 2</th>
+        <td>{{finalResult?.address2 }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="button_design">
+    <button class="button" routerLink="/updateDetails">Edit Profile</button>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <div class="error">Database is Down</div>
+
+</ng-template>

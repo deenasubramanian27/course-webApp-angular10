@@ -1,0 +1,115 @@
+.button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  border: 1px solid black;
+  background-color: rgba(4, 61, 114, 0.9);
+  color: white;
+  font-weight: 600;
+}
+
+td {
+  border: black 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: left;
+  width: 90%;
+  border-radius: 10px;
+  font-family: cursive;
+}
+
+th {
+  padding: 0px, 100px;
+  margin: 100px;
+}
+
+.table_design {
+  height: 50px;
+  border: black 1px solid;
+  border-radius: 20px;
+  background-color: rgba(222, 225, 228, 0.9);
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.error {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  margin-top: 200px;
+  font-size: xx-large;
+}
+
+.button,
+.button_design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .error {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    margin-top: 100px;
+    font-size: xx-small;
+  }
+
+  td {
+    padding: 10px;
+    font-family: cursive;
+    border: black 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: left;
+    width: 40%;
+    border-radius: 10px;
+  }
+
+  th {
+    padding: 10px;
+    text-align: start;
+    margin: 100px;
+  }
+
+  .table_design {
+    background-color: lightskyblue;
+    padding: 10px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24),
+      0 7px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 50px;
+    border: black 1px solid;
+    border-radius: 20px;
+    background-color: rgba(222, 225, 228, 0.9);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button,
+  .button_design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: rgba(4, 61, 114, 0.9);
+    color: white;
+    font-weight: 600;
+  }
+}
